@@ -1,0 +1,20 @@
+[package]
+name = "rs_torrent_magnet"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = ["arnaud jezequel"]
+description = "Parse torrent file and convert to Magnet URI"
+homepage = "https://github.com/neckaros/rs_torrent_magnet/" 
+readme = "README.md"
+repository = "https://github.com/neckarosrs_torrent_magnet/"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bt_bencode = "0.8.0"
+data-encoding = "2.5.0"
+hex = "0.4.3"
+serde = { version = "1.0.197", features = ["serde_derive"] }
+sha1 = "0.10.6"
+urlencoding = "2.1.3"
