@@ -1,4 +1,4 @@
-use std::{fs::File, io::{self, Read}, path::PathBuf};
+use std::{fs::File, io::Read, path::PathBuf};
 use data_encoding::BASE32;
 use derive_more::derive::From;
 use serde::{Deserialize, Deserializer, Serialize};
@@ -71,7 +71,7 @@ impl MagnetDetail {
     pub fn as_magnet(&self) -> String {
         let mut params: Vec<(&str,String)> = vec![];
         if let Some(name) = &self.torrent.info.name {
-            params.push(("dn", encode(&name).to_string()));
+            params.push(("dn", encode(name).to_string()));
         }
         if let Some(length) = &self.torrent.info.length {
             params.push(("xl", length.to_string()));
@@ -79,7 +79,7 @@ impl MagnetDetail {
         if let Some(list) = &self.torrent.announce_list {
             for node in list {
                 for announce in node {
-                    params.push(("tr", encode(&announce).to_string()));
+                    params.push(("tr", encode(announce).to_string()));
                 }
             }
         } else {
