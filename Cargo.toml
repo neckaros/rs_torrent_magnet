@@ -1,6 +1,6 @@
 [package]
 name = "rs_torrent_magnet"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["arnaud jezequel"]
@@ -14,6 +14,10 @@ repository = "https://github.com/neckarosrs_torrent_magnet/"
 [dependencies]
 bt_bencode = "0.8.0"
 data-encoding = "2.5.0"
+derive_more = { version = "1.0.0", features = ["from"] }
 serde = { version = "1.0.197", features = ["serde_derive"] }
+serde_with = "3.11.0"
 sha1 = "0.10.6"
+strum = "0.26.3"
+strum_macros = "0.26.4"
 urlencoding = "2.1.3"
